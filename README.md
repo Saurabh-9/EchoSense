@@ -4,7 +4,7 @@
 ---
 
 ## **Overview**  
-MoodScope is a web-based application that uses natural language processing (NLP) to:  
+EchoSense is a web-based application that uses natural language processing (NLP) to:  
 - **Analyze text input** for sentiment and emotions  
 - Provide users with a **sentiment score**  
 - Offer **motivational quotes** and **actionable advice**
