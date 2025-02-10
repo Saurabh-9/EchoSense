@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    transform: translateY(20px);
+    animation: float 1s ease forwards;
+}
+
+@keyframes float {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.form-container {
+    margin-bottom: 30px;
+}
+
+.textarea-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    resize: vertical;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+    transform: translateY(-2px);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #3498db, #2ecc71);
+    background-size: 200% auto;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.submit-btn:hover {
+    background-position: right center;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+}
+
+.result-container {
+    background: rgba(248, 249, 250, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: center;
+    animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sentiment-intro {
+    color: #7f8c8d;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.user-text {
+    color: #2c3e50;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.sentiment-result {
+    font-size: 1.3em;
+    color: #2c3e50;
+}
+
+.percentage {
+    font-weight: 600;
+    color: #3498db;
+}
+
+.emotion {
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.emotion.positive {
+    background: linear-gradient(45deg, #2ecc71, #27ae60);
+    color: white;
+    box-shadow: 0 3px 10px rgba(46, 204, 113, 0.4);
+}
+
+.emotion.negative {
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    color: white;
+    box-shadow: 0 3px 10px rgba(231, 76, 60, 0.4);
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #7f8c8d;
+}
+
+.credits {
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 2em;
+    }
+
+    textarea {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .title {
+        font-size: 1.5em;
+    }
+
+    .sentiment-result {
+        font-size: 1.1em;
+    }
+}
+
+.feedback-section {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.quote-box {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-left: 4px solid #4CAF50;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.quote {
+    color: #000000;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.advice-box h3 {
+    color: #000000;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.advice-list {
+    list-style: none;
+    padding: 0;
+}
+
+.advice-list li {
+    color: #000000;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+    padding-left: 1.5rem;
+    position: relative;
+    font-weight: 500;
+}
+
+.advice-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+}
+
+/* Adjust colors based on emotion */
+.positive ~ .feedback-section .quote-box {
+    border-left-color: #4CAF50;
+}
+
+.negative ~ .feedback-section .quote-box {
+    border-left-color: #f44336;
+}

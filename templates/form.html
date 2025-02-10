@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} Sentiment Analysis</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Welcome To Sentiment Analyzer</h1>
+        <div class="form-container">
+            <form method="POST">
+                <div class="textarea-wrapper">
+                    <textarea 
+                        name="text1" 
+                        placeholder="How are you feeling today? Express yourself..." 
+                        rows="8"
+                        required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Analyze Sentiment</button>
+            </form>
+        </div>
+
+        {% if final %}
+        <div class="result-container">
+            <div class="result-text">
+                <p class="sentiment-intro">The Sentiment of</p>
+                <p class="user-text">"{{ text1 }}"</p>
+                <p class="sentiment-result">is <span class="percentage">{{ final }}%</span> 
+                    <span class="emotion {{ emotion.lower() }}">{{ emotion }}</span>
+                </p>
+                
+                <div class="feedback-section">
+                    <div class="quote-box">
+                        <p class="quote">{{ quote }}</p>
+                    </div>
+                    <div class="advice-box">
+                        <h3>Suggestions for you:</h3>
+                        <ul class="advice-list">
+                            {% for tip in advice %}
+                            <li>{{ tip }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <footer>
+            <p class="credits"></p>
+        </footer>
+    </div>
+</body>
+</html>
